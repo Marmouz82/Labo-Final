@@ -19,4 +19,8 @@ export class CharacterApiService {
   public get(id: number): Observable<ICharacter> {
     return this._httpClient.get<ICharacter>(this._url + id);
   }
+
+  public delete(id: number) {
+    return this._httpClient.delete(this._url + id)
+  }
 }

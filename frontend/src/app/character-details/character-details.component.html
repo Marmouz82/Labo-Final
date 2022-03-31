@@ -1,1 +1,19 @@
-<p>character-details works!</p>
+<h1 class="title">Character details</h1>
+<div class="container">
+   <div *ngIf="charact">
+      <div class="card">
+         <img [src]="charact.image" class="card-img-top" alt="{{charact.name}}">
+         <div class="card-body">
+            <p class="card-text"><span>Full name :</span> {{charact.name}}</p>
+            <p class="card-text"><span>Gender :</span> {{charact.gender}}</p>
+            <p class="card-text"><span>House :</span> {{charact.house}}</p>
+            <p class="card-text"><span>Year of birth :</span> {{charact.yearOfBirth}}</p>
+            <p class="card-text"><span>Ancestry :</span> {{charact.ancestry}}</p>
+            <p class="card-text"><span>Eye colour :</span> {{charact.eyeColour}}</p>
+            <p class="card-text"><span>Hair colour :</span> {{charact.hairColour}}</p>
+            <p class="card-text"><span>Patronus :</span> {{charact.patronus}}</p>
+            <p class="card-text"><span>Actor :</span> {{charact.actor}}</p>
+         </div>
+      </div>
+   </div>
+</div>

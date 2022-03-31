@@ -28,4 +28,7 @@ export class CharacterListComponent implements OnInit {
     });
   }
 
+  public deleteCharacter(id: number) {
+    this._characApi.delete(id);
+  }
 }

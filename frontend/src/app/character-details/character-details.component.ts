@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { ICharacter } from '../models/icharacter';
+import { ICharacterList } from '../models/icharacter-list';
+import { CharacterApiService } from '../services/character-api.service';
 
 @Component({
   selector: 'app-character-details',
@@ -7,9 +11,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CharacterDetailsComponent implements OnInit {
 
-  constructor() { }
+  public charact!: ICharacter;
+
+  constructor(private _characApi: CharacterApiService, private _activeRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
+    const id = +this._activeRoute.snapshot.params['id']
+
+    this._characApi.get(id).subscribe({
+      next: (data) => {
+        this.charact = data;
+      }
+    });
   }
+
+
 
 }

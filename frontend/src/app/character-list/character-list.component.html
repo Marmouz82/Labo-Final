@@ -6,7 +6,9 @@
             <div class="card-body">
                 <h5 class="card-title">{{char.name}}</h5>
                 <p class="card-text">{{char.house}}</p>
-                <input type="button" href="#" value="Details" class="btn btn-primary">
+                <input type="button" [routerLink]="'/character-details/'+char.id" value="Details" class="btn btn-primary">
+                <input type="button" value="Update" class="btn btn-primary">
+                <input type="button" value="Delete" class="btn btn-primary"  >
             </div>
         </div>
     </div>
