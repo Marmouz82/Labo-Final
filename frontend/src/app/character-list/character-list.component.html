@@ -1,4 +1,13 @@
-<p>character-list works!</p>
-<div>
-    <div></div>
+<h1 class="page-title">Character List</h1>
+<div class="container">
+    <div *ngFor="let char of characts">
+        <div class="card" style="width: 15rem;">
+            <img [src]="char.image" class="card-img-top" alt="{{char.name}}">
+            <div class="card-body">
+                <h5 class="card-title">{{char.name}}</h5>
+                <p class="card-text">{{char.house}}</p>
+                <input type="button" href="#" value="Details" class="btn btn-primary">
+            </div>
+        </div>
+    </div>
 </div>

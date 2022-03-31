@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ICharacter } from '../models/icharacter';
+import { ICharacterList } from '../models/icharacter-list';
 import { CharacterApiService } from '../services/character-api.service';
 
 @Component({
@@ -8,11 +10,22 @@ import { CharacterApiService } from '../services/character-api.service';
 })
 export class CharacterListComponent implements OnInit {
 
-  constructor(private _charac: CharacterApiService) { }
+  public charact!: ICharacter;
+  public characts: ICharacterList[] = [];
+
+  constructor(private _characApi: CharacterApiService) { }
 
 
   ngOnInit(): void {
-    this._charac.getAll();
+    this._characApi.get(1).subscribe({
+      next: (data) => {
+        this.charact = data;
+      }
+    });
+
+    this._characApi.getAll().subscribe({
+      next: datas => this.characts = datas
+    });
   }
 
 }

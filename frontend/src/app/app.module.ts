@@ -6,17 +6,21 @@ import { AppComponent } from './app.component';
 import { NavComponent } from './nav/nav.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { CharacterListComponent } from './character-list/character-list.component';
+import { HttpClientModule } from '@angular/common/http';
+import { CharacterDetailsComponent } from './character-details/character-details.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavComponent,
     LandingPageComponent,
-    CharacterListComponent
+    CharacterListComponent,
+    CharacterDetailsComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
